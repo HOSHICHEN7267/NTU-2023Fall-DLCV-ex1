@@ -87,7 +87,7 @@ if __name__ == "__main__":
     Resnet50.fc = nn.Sequential(
         nn.Linear(2048, 65),
     )
-    for i, (name, param) in enumerate(model.named_parameters()):
+    for i, (name, param) in enumerate(Resnet50.named_parameters()):
         param.requires_grad = False
         if "fc" in name:
             param.requires_grad = True
